@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/toDoLists', [ToDoListController::class, 'index']);
+Route::post('/toDoLists', [ToDoListController::class, 'store']);
+Route::put('/toDoLists/{toDoLists}', [ToDoListController::class, 'update']);
+Route::delete('/toDoLists/{toDoLists}', [ToDoListController::class, 'destroy']);
