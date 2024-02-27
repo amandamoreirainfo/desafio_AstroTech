@@ -109,8 +109,18 @@ class ToDoListController extends Controller
     public function destroy($id)
     {
         //
-        $toDoList->delete();
-        return redirect('/toDoLists')->with('success', 'Tarefa excluída com sucesso!');
+        $toDoList = ToDoListModel::find($id);
+
+        if($toDoList){
+
+            $toDoList->delete();
+            return redirect('/toDoLists')->with('success', "Tarefa excluída com sucesso! ");
+            }else{
+
+            return redirect('/toDoLists')->with('error', 'Tarefa não encontrada!');
+    
+        }
+    
     }
 
 }
