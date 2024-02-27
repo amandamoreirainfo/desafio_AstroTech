@@ -1,5 +1,6 @@
 <x-guest-layout>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('css/layout.css') }}" rel="stylesheet">
     <x-auth-card>
         <x-slot name="logo">
          

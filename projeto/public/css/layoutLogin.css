@@ -1,0 +1,112 @@
+body {
+
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+}
+
+.auth-card {
+
+    background-color: #fff;
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.auth-card-logo {
+
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+
+.auth-card-logo img {
+
+    max-width: 100px;
+
+}
+
+.auth-card form label {
+
+    font-weight: bold;
+}
+
+
+.auth-card form input[type="email"],
+.auth-card form input[type="password"],
+.auth-card form input[type="checkbox"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.auth-card form .remember-me-label {
+
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 15px;
+
+}
+
+.auth-card form .remember-me-label input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.auth-card form .submit-button {
+
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
+
+.auth-card form .submit-button:hover {
+    background-color: #0056b3;
+}
+
+.auth-card form .forgot-password-link {
+
+    text-align: right;
+    font-size: 14px;
+
+}
+
+
+.auth-card form .forgot-password-link a {
+
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.auth-card form .forgot-password-link a:hover {
+
+    color: #0056b3;
+    
+}

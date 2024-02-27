@@ -70,6 +70,8 @@ class ToDoListController extends Controller
     public function edit($id)
     {
         //
+        $toDoList = ToDoListModel::find($id);
+        return view('toDoList.edit', compact('toDoList'));
     }
 
     /**
@@ -81,22 +83,12 @@ class ToDoListController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
-        $request->validate([
 
-            'title' => 'required|string|max:255',
-            'completed' => 'required|boolean',
-
-        ]);
-
-        $toDoList->update([
-
-            'title' => $request->input('title'),
-            'completed' => $request->input('completed'),
-
-        ]);
-
-        return redirect('/toDoLists')->with('success', 'Tarefa atualizada com sucesso');
+        $toDoList = ToDoListModel::find($id);
+        $toDoList->title = $request->input('title');
+        $toDoList->save();
+    
+        return redirect('/toDoLists')->with('success', 'Item atualizado com sucesso!');
     
     }
 

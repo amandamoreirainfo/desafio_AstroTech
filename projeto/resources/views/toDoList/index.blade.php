@@ -38,11 +38,12 @@
                     <tr>
                         <td>{{ $toDoList->title }} </td>
                         <td>
-                            <form action="{{ route('toDoLists.destroy', $toDoList->id) }}" method="POST">
+                            <form action="{{ route('toDoLists.destroy', $toDoList->id) }}" method="POST" class="d-inline-block">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete</button>
-                        </form>   
+                        </form>
+                        <a href="{{ route('toDoLists.edit', $toDoList->id) }}" class="btn btn-primary">Editar</a>
                         </td>
                     </tr>   
                 @endforeach
