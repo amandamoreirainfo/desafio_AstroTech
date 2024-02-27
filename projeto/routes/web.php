@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ToDoListController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/toDoLists', [ToDoListController::class, 'index']);
-Route::post('/toDoLists', [ToDoListController::class, 'store']);
-Route::put('/toDoLists/{toDoLists}', [ToDoListController::class, 'update']);
-Route::delete('/toDoLists/{toDoLists}', [ToDoListController::class, 'destroy']);
+Route::get('/toDoLists', [ToDoListController::class, 'index'])->name('toDoLists.index');
+Route::post('/toDoLists', [ToDoListController::class, 'store'])->name('toDoLists.store');
+Route::put('/toDoLists/{toDoList}', [ToDoListController::class, 'update'])->name('toDoLists.update');
+Route::delete('/toDoLists/{toDoList}', [ToDoListController::class, 'destroy'])->name('toDoLists.destroy');

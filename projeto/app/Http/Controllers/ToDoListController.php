@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\ToDoList;
+use App\Models\ToDoListModel;
 use Illuminate\Http\Request;
 
 class ToDoListController extends Controller
@@ -13,8 +13,7 @@ class ToDoListController extends Controller
      */
     public function index()
     {
-        //
-        $toDoLists = ToDoList::all();
+        $toDoLists = ToDoListModel::all();
         return view('toDoList.index', compact('toDoLists'));
     }
 
@@ -41,7 +40,7 @@ class ToDoListController extends Controller
             'title' => 'required|string|max:255',
         ]);
 
-        ToDoList::create([
+        ToDoListModel::create([
 
             'title' => $request->input('title'),
             'completed' => false,
